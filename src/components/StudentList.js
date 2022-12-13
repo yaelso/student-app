@@ -7,9 +7,9 @@ const StudentList = () => {
         <section>
             <h2 className="student-list__heading">Student List</h2>
             <ul className="student-list">
-                <li><Student /></li>
-                <li><Student /></li>
-                <li><Student /></li>
+                <li><Student name="Ada" email="ada@dev.org" /></li>
+                <li><Student name="Soo-ah" email="sooah@dev.org" /></li>
+                <li><Student name="Yael" email="yael@dev.org" /></li>
             </ul>
         </section>
     );
