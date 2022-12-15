@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './StudentList.css';
 import Student from './Student';
 
@@ -18,5 +19,12 @@ const StudentList = (props) => {
         </section>
     );
 }
+
+StudentList.propTypes = {
+    students: PropTypes.arrayOf(PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        email: PropTypes.string.isRequired
+    }))
+};
 
 export default StudentList;
