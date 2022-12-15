@@ -11,7 +11,8 @@ const StudentList = (props) => {
                     id={student.id} 
                     name={student.name} 
                     email={student.email} 
-                    onUpdate={props.onUpdateStudent}/>
+                    isPresent={student.isPresent}
+                    onUpdate={props.onUpdateStudent} />
             </li>
         );
     });

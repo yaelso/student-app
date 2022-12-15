@@ -4,6 +4,17 @@ import './Student.css';
 
 const Student = (props) => {
 
+    const onAttendanceButtonClick = () => {
+        const updatedStudent = {
+            id: props.id,
+            name: props.name,
+            email: props.email,
+            isPresent: !props.isPresent
+        };
+
+        props.onUpdate(updatedStudent);
+    };
+
     const nameColor = props.isPresent ? 'green' : 'red';
 
     return (
@@ -12,7 +23,7 @@ const Student = (props) => {
                 <li className={nameColor}>Nickname: {props.name}</li>
                 <li>Email: {props.email}</li>
             </ul>
-            {/* <button onClick={togglePresence}>Toggle if {props.name} is present</button> */}
+            <button onClick={onAttendanceButtonClick}>Toggle if {props.name} is present</button>
         </div>
     );
 }
