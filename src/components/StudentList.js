@@ -1,12 +1,11 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import './StudentList.css';
 import Student from './Student';
 
 const StudentList = (props) => {
-    const studentComponents = props.students.map((student, index) => {
+    const studentComponents = props.students.map((student) => {
         return (
-            <li key={index}>
+            <li key={student.id}>
                 <Student 
                     id={student.id} 
                     name={student.name} 
