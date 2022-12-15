@@ -6,7 +6,13 @@ import Student from './Student';
 const StudentList = (props) => {
     const studentComponents = props.students.map((student, index) => {
         return (
-            <li key={index}><Student name={student.name} email={student.email} /></li>
+            <li key={index}>
+                <Student 
+                    id={student.id} 
+                    name={student.name} 
+                    email={student.email} 
+                    onUpdate={props.onUpdateStudent}/>
+            </li>
         );
     });
 
@@ -22,9 +28,12 @@ const StudentList = (props) => {
 
 StudentList.propTypes = {
     students: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.number.isRequired,
         name: PropTypes.string.isRequired,
-        email: PropTypes.string.isRequired
-    }))
+        email: PropTypes.string.isRequired,
+        isPresent: PropTypes.bool
+    })),
+    onUpdateStudent: PropTypes.func.isRequired
 };
 
 export default StudentList;
