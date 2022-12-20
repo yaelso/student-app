@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import StudentList from './components/StudentList';
 import ClassInfo from './components/ClassInfo';
+import NewStudentForm from './components/NewStudentForm';
 
 function App() {
   const [studentData, setStudentData] = useState([
@@ -58,6 +59,8 @@ function App() {
       <StudentList 
         students={studentData} 
         onUpdateStudent={updateStudentData}/>
+      <NewStudentForm 
+        addStudentCallback={addStudentData} />
     </main>
   );
 }
