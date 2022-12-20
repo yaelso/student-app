@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
-const NewStudentForm = () => {
+const NewStudentForm = (props) => {
     const [formFields, setFormFields] = useState({
         name: '',
         email: '',
@@ -42,5 +43,9 @@ const NewStudentForm = () => {
         </form>
     );
 };
+
+NewStudentForm.propTypes = {
+    addStudentCallback: PropTypes.func.isRequired
+}
 
 export default NewStudentForm;
