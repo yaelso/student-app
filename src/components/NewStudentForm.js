@@ -22,7 +22,7 @@ const NewStudentForm = (props) => {
     };
 
     const onFormSubmit = (event) => {
-        event.preventDefualt();
+        event.preventDefault();
 
         props.addStudentCallback({
             name: formFields.name,
