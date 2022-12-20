@@ -20,9 +20,23 @@ const NewStudentForm = (props) => {
             email: event.target.value
         })
     };
+
+    const onFormSubmit = (event) => {
+        event.preventDefualt();
+
+        props.addStudentCallback({
+            name: formFields.name,
+            email: formFields.email
+        });
+
+        setFormFields({
+            name: '',
+            email: '',
+        });
+    };
     
     return (
-        <form>
+        <form onSubmit={onFormSubmit}>
             <div>
                 <label htmlFor='fullName'>Name:</label>
                 <input 
