@@ -36,6 +36,21 @@ function App() {
     setStudentData(students);
   };
 
+  const addStudentData = newStudent => {
+    const newStudentList = [...studentData];
+
+    const nextId = Math.max(...newStudentList.map(student => student.id)) + 1;
+
+    newStudentList.push({
+      id: nextId,
+      name: newStudent.name,
+      email: newStudent.email,
+      isPresent: false,
+    });
+
+    setStudentData(newStudentList);
+  };
+
   return (
     <main>
       <h1>Attendance</h1>
